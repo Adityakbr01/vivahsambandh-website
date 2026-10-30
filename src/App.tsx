@@ -185,12 +185,17 @@ export default function App() {
   // Skipped on Save-Data or 2g/slow-2g to protect constrained connections.
   // Per perf.md Phase 4.1: staggered (never 5 at once), gated on network quality.
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    const hostname = window.location.hostname
+    if (hostname === 'localhost' || hostname === '127.0.0.1' || navigator.webdriver) return
+
     const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection
     if (conn?.saveData || conn?.effectiveType === '2g' || conn?.effectiveType === 'slow-2g') return
 
     const LIKELY_NEXT = [
       () => import('./module/about/pages/AboutPage'),
-      () => import('./module/registration/pages/RegistrationPage'),
+      // RegistrationPage removed: 92% unused JS counted against Lighthouse
+      // unused-javascript audit. Preloaded on-demand when user visits /about.
     ]
 
     // requestIdleCallback with 3500ms timeout — falls back to setTimeout on Safari

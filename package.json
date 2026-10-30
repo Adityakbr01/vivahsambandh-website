@@ -61,6 +61,7 @@
     "esbuild": "^0.28.2",
     "lighthouse": "^13.5.0",
     "oxlint": "^1.81.0",
+    "sharp": "^0.35.5",
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
     "wait-on": "^9.5.1"

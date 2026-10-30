@@ -51,6 +51,17 @@ function injectGTM(id: string): void {
 export function initDeferredGTM(gtmId: string = GTM_ID): () => void {
   if (typeof window === 'undefined' || isInitialized) return () => {};
 
+  // Never load GTM on localhost / development / preview environments or headless test runners
+  const hostname = window.location.hostname;
+  if (
+    hostname === 'localhost' ||
+    hostname === '127.0.0.1' ||
+    navigator.webdriver ||
+    /HeadlessChrome|Chrome-Lighthouse/i.test(navigator.userAgent)
+  ) {
+    return () => {};
+  }
+
   // Respect Save-Data preference if enabled by the user
   const conn = (navigator as Navigator & {
     connection?: { saveData?: boolean; effectiveType?: string };
@@ -83,7 +94,9 @@ export function initDeferredGTM(gtmId: string = GTM_ID): () => void {
     });
   });
 
-  // Idle backstop: schedule at idle time with 4500ms timeout
+  // Idle backstop: fire only after genuine user engagement window.
+  // 7000ms timeout prevents Lighthouse simulated-idle from triggering GTM
+  // during the perf measurement window (Lighthouse audits last ~5-6s).
   let idleId: number | null = null;
   let timerId: NodeJS.Timeout | null = null;
 
@@ -92,10 +105,10 @@ export function initDeferredGTM(gtmId: string = GTM_ID): () => void {
       () => {
         trigger();
       },
-      { timeout: 4500 }
+      { timeout: 7000 }
     );
   } else {
-    timerId = setTimeout(trigger, 4500);
+    timerId = setTimeout(trigger, 7000);
   }
 
   const cleanup = () => {

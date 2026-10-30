@@ -14,6 +14,7 @@ export const REMOTE_IMAGE_BASE =
 export const URGENT_LOCAL_IMAGES = new Set([
   // Hero LCP Banner (Must stay local for instant LCP)
   '/images/home/home_banner_image-640.webp',
+  '/images/home/home_banner_image-800.webp',
   '/images/home/home_banner_image-1024.webp',
   '/images/home/home_banner_image-1280.webp',
   // 1440w variant for desktop (1350px viewport) - Phase 7 gap fix

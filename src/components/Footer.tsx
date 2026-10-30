@@ -67,6 +67,8 @@ export default function Footer() {
               <CompanyLogo
                 className="h-13 w-auto"
                 fallbackClassName="h-13 w-13 text-gold-400"
+                width={211}
+                height={52}
               />
               {/* <div>
                 <p className="font-display text-xl font-bold leading-none text-white">
