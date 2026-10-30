@@ -30,6 +30,7 @@ export default function CompanyLogo({
     <img
       src={logoUrl}
       alt={name}
+      title={`${name} – Online Matrimony and Marriage Services`}
       decoding="async"
       className={cn("object-contain", className)}
     />

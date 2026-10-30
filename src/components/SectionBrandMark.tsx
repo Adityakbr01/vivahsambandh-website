@@ -17,6 +17,7 @@ export default function SectionBrandMark({
     <img
       src="/logo.svg"
       alt="Vivah Sambandh Logo"
+      title="VivahSambandh – Online Matrimony and Marriage Services"
       className={`inline-block object-contain ${size} ${className}`}
       aria-hidden="true"
     />
