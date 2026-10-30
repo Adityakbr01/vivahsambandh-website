@@ -28,13 +28,17 @@ export const URGENT_LOCAL_IMAGES = new Set([
   '/images/home/flower2_image-320.webp',
 
   // Hero Match Pill Avatars (above-the-fold)
+  '/images/home/woman_image-120.webp',
   '/images/home/woman_image-160.webp',
   '/images/home/woman_image-320.webp',
+  '/images/home/man_image-120.webp',
   '/images/home/man_image-160.webp',
   '/images/home/man_image-320.webp',
   '/images/home/radiant-indian-bride-in-floral-glow-128.webp',
+  '/images/home/radiant-indian-bride-in-floral-glow-200.webp',
   '/images/home/radiant-indian-bride-in-floral-glow-320.webp',
   '/images/home/radiant-indian-groom-in-a-golden-wedding-setting-128.webp',
+  '/images/home/radiant-indian-groom-in-a-golden-wedding-setting-200.webp',
   '/images/home/radiant-indian-groom-in-a-golden-wedding-setting-320.webp',
 ])
 

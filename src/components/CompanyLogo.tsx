@@ -15,9 +15,9 @@ interface CompanyLogoProps {
   height?: number;
 }
 
-const LOCAL_LOGO = "/images/logo.webp";
+const LOCAL_LOGO = "/images/logo-150.webp";
 const LOCAL_LOGO_SRCSET =
-  "/images/logo-150.webp 150w, /images/logo.webp 300w, /images/logo-450.webp 450w";
+  "/images/logo-150.webp 150w, /images/logo-200.webp 200w, /images/logo-300.webp 300w";
 
 export default function CompanyLogo({
   className = "h-8 w-auto",

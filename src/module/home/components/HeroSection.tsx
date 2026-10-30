@@ -60,13 +60,13 @@ const MATCH_CARDS = [
     href: "/registration",
     photo: "/images/home/radiant-indian-bride-in-floral-glow-128.webp",
     photoSrcSet: imgSrcSet(
-      "/images/home/radiant-indian-bride-in-floral-glow-128.webp 128w, /images/home/radiant-indian-bride-in-floral-glow-320.webp 320w",
+      "/images/home/radiant-indian-bride-in-floral-glow-128.webp 128w, /images/home/radiant-indian-bride-in-floral-glow-200.webp 200w, /images/home/radiant-indian-bride-in-floral-glow-320.webp 320w",
     ),
     photoWidth: 1145,
     photoHeight: 1374,
     illustration: "/images/home/woman_image-160.webp",
     illustrationSrcSet: imgSrcSet(
-      "/images/home/woman_image-160.webp 160w, /images/home/woman_image-320.webp 320w",
+      "/images/home/woman_image-120.webp 120w, /images/home/woman_image-160.webp 160w, /images/home/woman_image-320.webp 320w",
     ),
     illustrationWidth: 1355,
     illustrationHeight: 1161,
@@ -80,13 +80,13 @@ const MATCH_CARDS = [
     href: "/registration",
     photo: "/images/home/radiant-indian-groom-in-a-golden-wedding-setting-128.webp",
     photoSrcSet: imgSrcSet(
-      "/images/home/radiant-indian-groom-in-a-golden-wedding-setting-128.webp 128w, /images/home/radiant-indian-groom-in-a-golden-wedding-setting-320.webp 320w",
+      "/images/home/radiant-indian-groom-in-a-golden-wedding-setting-128.webp 128w, /images/home/radiant-indian-groom-in-a-golden-wedding-setting-200.webp 200w, /images/home/radiant-indian-groom-in-a-golden-wedding-setting-320.webp 320w",
     ),
     photoWidth: 1254,
     photoHeight: 1254,
     illustration: "/images/home/man_image-160.webp",
     illustrationSrcSet: imgSrcSet(
-      "/images/home/man_image-160.webp 160w, /images/home/man_image-320.webp 320w",
+      "/images/home/man_image-120.webp 120w, /images/home/man_image-160.webp 160w, /images/home/man_image-320.webp 320w",
     ),
     illustrationWidth: 1324,
     illustrationHeight: 1188,
