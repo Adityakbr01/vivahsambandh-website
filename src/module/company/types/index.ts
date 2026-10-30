@@ -10,6 +10,12 @@ export interface CompanyData {
   company_landline_no: string | null
   company_address: string | null
   company_place: string | null
+  company_facebook?: string | null
+  company_instagram?: string | null
+  company_linkedin?: string | null
+  company_youtube?: string | null
+  company_app_store?: string | null
+  company_play_store?: string | null
   company_logo: string | null
   isPayment?: string | null
   isDiscount?: string | null
