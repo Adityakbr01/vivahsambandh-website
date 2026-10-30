@@ -32,6 +32,7 @@ const HelpCenterPage = lazy(() => import('./module/legal/pages/HelpCenterPage'))
 const RegistrationPage = lazy(() => import('./module/registration/pages/RegistrationPage'))
 const AdminRegisterPage = lazy(() => import('./module/registration/pages/AdminRegisterPage'))
 const DownloadPage = lazy(() => import('./module/download/pages/DownloadPage'))
+const AppRedirectPage = lazy(() => import('./module/download/pages/AppRedirectPage'))
 
 // Code-split Super Admin Panel module routes
 const PanelLoginPage = lazy(() => import('./module/super-admin/pages/PanelLoginPage'))
@@ -540,6 +541,14 @@ export default function App() {
                     <Route
                       path="/hi/download"
                       element={<DownloadPage />}
+                    />
+                    <Route
+                      path="/app"
+                      element={<AppRedirectPage />}
+                    />
+                    <Route
+                      path="/hi/app"
+                      element={<AppRedirectPage />}
                     />
                     <Route
                       path="/registration"
