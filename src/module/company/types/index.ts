@@ -2,6 +2,7 @@ import type { ImageUrlEntry } from '@/lib/api/types'
 
 export interface CompanyData {
   company_name: string | null
+  company_description?: string | null
   company_email: string | null
   company_gst: string | null
   company_pan_no: string | null
@@ -10,6 +11,12 @@ export interface CompanyData {
   company_address: string | null
   company_place: string | null
   company_logo: string | null
+  isPayment?: string | null
+  isDiscount?: string | null
+  payment_url?: string | null
+  payment_amount?: string | null
+  discount_amount?: string | null
+  payment_for?: number | string | null
 }
 
 export interface CompanyResponse {
