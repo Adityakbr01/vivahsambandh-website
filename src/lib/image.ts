@@ -16,6 +16,8 @@ export const URGENT_LOCAL_IMAGES = new Set([
   '/images/home/home_banner_image-640.webp',
   '/images/home/home_banner_image-1024.webp',
   '/images/home/home_banner_image-1280.webp',
+  // 1440w variant for desktop (1350px viewport) - Phase 7 gap fix
+  '/images/home/home_banner_image-1440.webp',
   '/images/home/home_banner_image.webp',
 
   // Hero Top/Bottom Garland accents (above-the-fold)

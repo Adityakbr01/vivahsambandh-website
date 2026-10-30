@@ -181,6 +181,39 @@ export default function App() {
     }
   }, [i18n])
 
+  // Idle route preloading: warm the 1-2 most-likely next chunks after 3.5s.
+  // Skipped on Save-Data or 2g/slow-2g to protect constrained connections.
+  // Per perf.md Phase 4.1: staggered (never 5 at once), gated on network quality.
+  useEffect(() => {
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection
+    if (conn?.saveData || conn?.effectiveType === '2g' || conn?.effectiveType === 'slow-2g') return
+
+    const LIKELY_NEXT = [
+      () => import('./module/about/pages/AboutPage'),
+      () => import('./module/registration/pages/RegistrationPage'),
+    ]
+
+    // requestIdleCallback with 3500ms timeout — falls back to setTimeout on Safari
+    const schedule = typeof requestIdleCallback !== 'undefined'
+      ? (fn: () => void) => requestIdleCallback(fn, { timeout: 3500 })
+      : (fn: () => void) => setTimeout(fn, 3500)
+
+    let cancelled = false
+    const id = schedule(() => {
+      if (cancelled) return
+      // Stagger each preload 400ms apart so they don't race for bandwidth
+      LIKELY_NEXT.forEach((load, i) => {
+        setTimeout(() => { if (!cancelled) void load().catch(() => {}) }, i * 400)
+      })
+    })
+
+    return () => {
+      cancelled = true
+      if (typeof cancelIdleCallback !== 'undefined' && typeof id === 'number') cancelIdleCallback(id)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <QueryProvider>
       <SuperAdminAuthProvider>

@@ -266,9 +266,9 @@ export default function HeroSection() {
           <img
             src={img("/images/home/home_banner_image-640.webp")}
             srcSet={imgSrcSet(
-              "/images/home/home_banner_image-640.webp 640w, /images/home/home_banner_image-1024.webp 1024w, /images/home/home_banner_image-1280.webp 1280w, /images/home/home_banner_image.webp 2172w",
+              "/images/home/home_banner_image-640.webp 640w, /images/home/home_banner_image-1024.webp 1024w, /images/home/home_banner_image-1280.webp 1280w, /images/home/home_banner_image-1440.webp 1440w, /images/home/home_banner_image.webp 2172w",
             )}
-            sizes="(max-width: 640px) 240px, (max-width: 1024px) 640px, 100vw"
+            sizes="100vw"
             width={2172}
             height={724}
             alt="Vivah Sambandh Indian wedding celebration banner"
@@ -437,7 +437,7 @@ export default function HeroSection() {
                 <img
                   src={card.photo}
                   srcSet={card.photoSrcSet}
-                  sizes="(max-width: 640px) 48px, (max-width: 1024px) 10rem, 16rem"
+                  sizes="(max-width: 640px) 7rem, (max-width: 1024px) 10rem, 16rem"
                   width={card.photoWidth}
                   height={card.photoHeight}
                   alt={t(card.labelKey)}
@@ -454,7 +454,7 @@ export default function HeroSection() {
                 <img
                   src={card.illustration}
                   srcSet={card.illustrationSrcSet}
-                  sizes="5.5rem"
+                  sizes="(max-width: 640px) 3.5rem, (max-width: 1024px) 4.5rem, 5.5rem"
                   width={card.illustrationWidth}
                   height={card.illustrationHeight}
                   alt={card.illustrationAlt}
